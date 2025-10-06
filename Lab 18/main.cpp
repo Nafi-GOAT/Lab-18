@@ -33,5 +33,28 @@ int main() {
     cin >> choice;
     cin.ignore();
     
+    char decision = 'Y';
+    while (toupper(decision) == 'Y'){
+        float rating;
+        string comment;
+        
+        
+        cout << "Enter review rating 0-5: ";
+        cin >> rating;
+        cin.ignore();
+        cout << "Enter review comments: ";
+        getline(cin, comment);
+        
+        if (choice == 1){
+            Head(head, rating, comment);
+            
+        }
+        else {
+            tail(head, rating, comment);
+        }
+        cout << "Enter another review? Y/N: ";
+        cin >> decision;
+        cin.ignore();
+    }
     
 }
