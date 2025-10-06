@@ -29,6 +29,7 @@ int main() {
     int choice;
     cout << "Which linked list method should we use?\n";
     cout << "   (1) New nodes are added at the head of the linked list\n";
+    cout << "   (2) New nopdes are added at the tail of the linked list\n";
     cout << "   Choice: ";
     cin >> choice;
     cin.ignore();
@@ -61,7 +62,7 @@ int main() {
     return 0;
 }
 
-void Head(Movie *head, float rating, string comment){
+void Head(Movie *&head, float rating, string &comment){
     Movie *newNode = new Movie;
     newNode ->rating = rating;
     newNode ->comment = comment;
@@ -102,10 +103,11 @@ void output(Movie *head){
     }
 }
 
-void deleteReview(Movie *& head){
+void deleteReview(Movie *&head){
     while (head){
         Movie *temp = head;
         head = head->next;
         delete temp;
     }
+    head = nullptr;
 }
