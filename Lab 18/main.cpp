@@ -4,11 +4,17 @@
 //
 //  Created by Nafi on 10/5/25.
 //
+//COMSC 210| Mehraj Hasan Nafi
+//IDE used: XCODE
+//
 
 #include <iostream>
+#include <string>
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
-}
+struct Node {
+    float rating;
+    string comment;
+    Node* next;
+};
+
