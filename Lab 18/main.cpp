@@ -56,5 +56,23 @@ int main() {
         cin >> decision;
         cin.ignore();
     }
+    output(head);
+    deleteReview(head);
+    return 0;
+}
+
+void Head(Movie *head, float rating, string comment){
+    Movie *newNode = new Movie;
+    newNode ->rating = rating;
+    newNode ->comment = comment;
+    newNode ->next = head;
+    head = newNode;
+}
+
+void tail(Movie *&head, float rating, string &comment){
+    Movie *newNode = new Movie;
+    newNode->rating = rating;
+    newNode->comment = comment;
+    newNode->next = nullptr;
     
 }
