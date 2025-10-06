@@ -75,4 +75,37 @@ void tail(Movie *&head, float rating, string &comment){
     newNode->comment = comment;
     newNode->next = nullptr;
     
+    if(!head){
+        head = newNode;
+        return;
+    }
+    
+    Movie *temp = head;
+    while (temp->next){
+        temp = temp->next;
+    }
+    temp->next = newNode;
+}
+
+void output(Movie *head){
+    int count = 0;
+    float total = 0;
+    Movie *temp = head;
+    
+    while (temp){
+        cout << "   >Review #" << ++count <<": "<< temp->rating << ": "<<temp->comment <<endl;
+        total += temp->rating;
+        temp = temp->next;
+    }
+    if (count >0){
+        cout << "   > Average: "<< total/count << endl;
+    }
+}
+
+void deleteReview(Movie *& head){
+    while (head){
+        Movie *temp = head;
+        head = head->next;
+        delete temp;
+    }
 }
