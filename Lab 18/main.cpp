@@ -12,20 +12,26 @@
 #include <string>
 using namespace std;
 
-struct Node {
+struct Movie {
     float rating;
     string comment;
-    Node* next;
+    Movie* next;
 };
 
-void Head(Movie *head, float rating, string comment);
-void tail(Movie * head, float rating, string &comment);
+void Head(Movie *&head, float rating, string &comment);
+void tail(Movie *&head, float rating, string &comment);
 void output(Movie *head);
-void deleteReview(Movie *head);
+void deleteReview(Movie *&head);
 
 int main() {
-    movie *head = nullptr;
+    Movie *head = nullptr;
     
     int choice;
+    cout << "Which linked list method should we use?\n";
+    cout << "   (1) New nodes are added at the head of the linked list\n";
+    cout << "   Choice: ";
+    cin >> choice;
+    cin.ignore();
+    
     
 }
