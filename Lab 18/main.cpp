@@ -18,3 +18,14 @@ struct Node {
     Node* next;
 };
 
+void Head(Movie *head, float rating, string comment);
+void tail(Movie * head, float rating, string &comment);
+void output(Movie *head);
+void deleteReview(Movie *head);
+
+int main() {
+    movie *head = nullptr;
+    
+    int choice;
+    
+}
