@@ -88,18 +88,21 @@ void tail(Movie *&head, float rating, string &comment){
     temp->next = newNode;
 }
 
+
 void output(Movie *head){
+    cout << "Outputting all reviews:\n"; // 🔧 added line to match sample output
+    
     int count = 0;
     float total = 0;
     Movie *temp = head;
     
     while (temp){
-        cout << "   >Review #" << ++count <<": "<< temp->rating << ": "<<temp->comment <<endl;
+        cout << "    > Review #" << ++count << ": " << temp->rating << ": " << temp->comment << endl;
         total += temp->rating;
         temp = temp->next;
     }
     if (count >0){
-        cout << "   > Average: "<< total/count << endl;
+        cout << "    > Average: " << total/count << endl;
     }
 }
 
